@@ -93,7 +93,7 @@ var idMk = charIDToTypeID( "Mk  " );
     var idUsng = charIDToTypeID( "Usng" );
         var desc39 = new ActionDescriptor();
         var idTxt = charIDToTypeID( "Txt " );
-        desc39.putString( idTxt, """test""" );
+        desc39.putString( idTxt, "Text" );
         var idwarp = stringIDToTypeID( "warp" );
             var desc40 = new ActionDescriptor();
             var idwarpStyle = stringIDToTypeID( "warpStyle" );
@@ -767,7 +767,7 @@ var idslct = charIDToTypeID( "slct" );
     var idnull = charIDToTypeID( "null" );
         var ref37 = new ActionReference();
         var idLyr = charIDToTypeID( "Lyr " );
-        ref37.putName( idLyr, "test" );
+        ref37.putName( idLyr, "Text" );
     desc89.putReference( idnull, ref37 );
     var idMkVs = charIDToTypeID( "MkVs" );
     desc89.putBoolean( idMkVs, false );
@@ -907,44 +907,11 @@ var idsave = charIDToTypeID( "save" );
 executeAction( idsave, desc97, DialogModes.NO );
 
 // =======================================================
-var idsave = charIDToTypeID( "save" );
-    var desc99 = new ActionDescriptor();
-    var idAs = charIDToTypeID( "As  " );
-        var desc100 = new ActionDescriptor();
-        var idmaximizeCompatibility = stringIDToTypeID( "maximizeCompatibility" );
-        desc100.putBoolean( idmaximizeCompatibility, false );
-    var idPhtthree = charIDToTypeID( "Pht3" );
-    desc99.putObject( idAs, idPhtthree, desc100 );
-    var idIn = charIDToTypeID( "In  " );
-    desc99.putPath( idIn, new File( "G:\\Project\\PhotoshopTutorialAutomation\\test.psd" ) );
-    var idDocI = charIDToTypeID( "DocI" );
-    desc99.putInteger( idDocI, 1289 );
-    var idsaveStage = stringIDToTypeID( "saveStage" );
-    var idsaveStageType = stringIDToTypeID( "saveStageType" );
-    var idsaveBegin = stringIDToTypeID( "saveBegin" );
-    desc99.putEnumerated( idsaveStage, idsaveStageType, idsaveBegin );
-executeAction( idsave, desc99, DialogModes.NO );
-
-// =======================================================
-var idsave = charIDToTypeID( "save" );
-    var desc101 = new ActionDescriptor();
-    var idAs = charIDToTypeID( "As  " );
-        var desc102 = new ActionDescriptor();
-        var idmaximizeCompatibility = stringIDToTypeID( "maximizeCompatibility" );
-        desc102.putBoolean( idmaximizeCompatibility, false );
-    var idPhtthree = charIDToTypeID( "Pht3" );
-    desc101.putObject( idAs, idPhtthree, desc102 );
-    var idIn = charIDToTypeID( "In  " );
-    desc101.putPath( idIn, new File( "G:\\Project\\PhotoshopTutorialAutomation\\test.psd" ) );
-    var idDocI = charIDToTypeID( "DocI" );
-    desc101.putInteger( idDocI, 1289 );
-    var idsaveStage = stringIDToTypeID( "saveStage" );
-    var idsaveStageType = stringIDToTypeID( "saveStageType" );
-    var idsaveSucceeded = stringIDToTypeID( "saveSucceeded" );
-    desc101.putEnumerated( idsaveStage, idsaveStageType, idsaveSucceeded );
-executeAction( idsave, desc101, DialogModes.NO );
-
-// =======================================================
 var idCls = charIDToTypeID( "Cls " );
-executeAction( idCls, undefined, DialogModes.NO );
+    var desc2 = new ActionDescriptor();
+    var idSvng = charIDToTypeID( "Svng" );
+    var idYsN = charIDToTypeID( "YsN " );
+    var idN = charIDToTypeID( "N   " );
+    desc2.putEnumerated( idSvng, idYsN, idN );
+executeAction( idCls, desc2, DialogModes.NO );
 
