@@ -728,7 +728,7 @@ function LoadChannelSelection() {
     executeAction(idsetd, desc91, DialogModes.NO);
 };
 
-function SavePNG() {
+function SavePNG(fileName) {
     // =======================================================
     var idsave = charIDToTypeID("save");
     var desc95 = new ActionDescriptor();
@@ -747,7 +747,7 @@ function SavePNG() {
     var idPNGF = charIDToTypeID("PNGF");
     desc95.putObject(idAs, idPNGF, desc96);
     var idIn = charIDToTypeID("In  ");
-    desc95.putPath(idIn, new File("G:\\Project\\PhotoshopTutorialAutomation\\test.png"));
+    desc95.putPath(idIn, new File(fileName));
     var idDocI = charIDToTypeID("DocI");
     desc95.putInteger(idDocI, 1289);
     var idCpy = charIDToTypeID("Cpy ");

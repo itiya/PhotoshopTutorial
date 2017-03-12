@@ -3,9 +3,11 @@
 var text = arguments[0];
 var windCount = arguments[1];
 var blurPix = arguments[2];
+var fileName = arguments[3];
+var scriptPath = arguments[4];
 
 text =Å@text.replace("CR+LF", "\r")
-alert(text)
+
 var layerName = "origin";
 CreateProject();
 WriteText(text);
@@ -31,5 +33,5 @@ AddGradationLayer();
 RadialBlur(layerName);
 LoadChannelSelection();
 FillColor("Blck");
-SavePNG();
+SavePNG(scriptPath + fileName);
 CloseProject();
