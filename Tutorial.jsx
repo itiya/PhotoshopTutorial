@@ -1,7 +1,8 @@
 #include "TutorialMethod.jsx"
 
-var text = "色即是空"
+var text = "かきくけこ\rあいうえお";
 var windCount = 3;
+var blurPix = 8;
 
 CreateProject();
 WriteText(text);
@@ -9,7 +10,7 @@ TextAlign();
 TextRasterize();
 MakeChannel();
 FillColor("Wht ");
-GaussianBlur(8);
+GaussianBlur(blurPix);
 Solarization();
 LevelControl();
 CopyTextLayer();
