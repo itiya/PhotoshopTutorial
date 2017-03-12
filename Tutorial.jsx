@@ -1,6 +1,7 @@
 #include "TutorialMethod.jsx"
 
 var text = "色即是空"
+var windCount = 3;
 
 CreateProject();
 WriteText(text);
@@ -8,20 +9,16 @@ TextAlign();
 TextRasterize();
 MakeChannel();
 FillColor("Wht ");
-GaussianBlur();
+GaussianBlur(8);
 Solarization();
 LevelControl();
 CopyTextLayer();
 PolarCoordinateConversion("PlrR");
 Rotate(90);
 AdjustmentInvert();
-WindFilter();
-WindFilter();
-WindFilter();
+WindFilterMulti(windCount);
 AdjustmentInvert();
-WindFilter();
-WindFilter();
-WindFilter();
+WindFilterMulti(windCount);
 Rotate(-90);
 PolarCoordinateConversion("RctP");
 LayerModeScreen();

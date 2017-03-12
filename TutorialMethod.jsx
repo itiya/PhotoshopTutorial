@@ -335,7 +335,7 @@ function FillColor(color) {
     executeAction(idFl, desc56, DialogModes.NO);
 };
 
-function GaussianBlur() {
+function GaussianBlur(pixel) {
     // =======================================================
     var idsetd = charIDToTypeID("setd");
     var desc57 = new ActionDescriptor();
@@ -372,7 +372,7 @@ function GaussianBlur() {
     var desc59 = new ActionDescriptor();
     var idRds = charIDToTypeID("Rds ");
     var idPxl = charIDToTypeID("#Pxl");
-    desc59.putUnitDouble(idRds, idPxl, 10.000000);
+    desc59.putUnitDouble(idRds, idPxl, pixel);
     executeAction(idGsnB, desc59, DialogModes.NO);
 };
 
@@ -463,6 +463,12 @@ function AdjustmentInvert() {
     executeAction(idInvr, undefined, DialogModes.NO);
 };
 
+function WindFilterMulti(times) {
+    for (count = 0; count < times; count++) {
+        WindFilter();
+    }
+};
+
 function WindFilter() {
     // =======================================================
     var idWnd = charIDToTypeID("Wnd ");
@@ -479,7 +485,7 @@ function WindFilter() {
 };
 
 function LayerModeScreen() {
-   // =======================================================
+    // =======================================================
     var idsetd = charIDToTypeID("setd");
     var desc73 = new ActionDescriptor();
     var idnull = charIDToTypeID("null");
@@ -503,129 +509,108 @@ function LayerModeScreen() {
 function AddGradationLayer() {
     // =======================================================
     var idMk = charIDToTypeID("Mk  ");
-    var desc75 = new ActionDescriptor();
+    var desc24 = new ActionDescriptor();
     var idnull = charIDToTypeID("null");
-    var ref35 = new ActionReference();
+    var ref2 = new ActionReference();
     var idcontentLayer = stringIDToTypeID("contentLayer");
-    ref35.putClass(idcontentLayer);
-    desc75.putReference(idnull, ref35);
+    ref2.putClass(idcontentLayer);
+    desc24.putReference(idnull, ref2);
     var idUsng = charIDToTypeID("Usng");
-    var desc76 = new ActionDescriptor();
+    var desc25 = new ActionDescriptor();
     var idType = charIDToTypeID("Type");
-    var desc77 = new ActionDescriptor();
+    var desc26 = new ActionDescriptor();
     var idAngl = charIDToTypeID("Angl");
     var idAng = charIDToTypeID("#Ang");
-    desc77.putUnitDouble(idAngl, idAng, 90.000000);
+    desc26.putUnitDouble(idAngl, idAng, 90.000000);
     var idType = charIDToTypeID("Type");
     var idGrdT = charIDToTypeID("GrdT");
     var idLnr = charIDToTypeID("Lnr ");
-    desc77.putEnumerated(idType, idGrdT, idLnr);
+    desc26.putEnumerated(idType, idGrdT, idLnr);
     var idGrad = charIDToTypeID("Grad");
-    var desc78 = new ActionDescriptor();
+    var desc27 = new ActionDescriptor();
     var idNm = charIDToTypeID("Nm  ");
-    desc78.putString(idNm, """$$$/DefaultGradient/BlueRedYellow=Blue, Red, Yellow""" );
+    desc27.putString(idNm, """ƒJƒXƒ^ƒ€""" );
     var idGrdF = charIDToTypeID("GrdF");
     var idGrdF = charIDToTypeID("GrdF");
     var idCstS = charIDToTypeID("CstS");
-    desc78.putEnumerated(idGrdF, idGrdF, idCstS);
+    desc27.putEnumerated(idGrdF, idGrdF, idCstS);
     var idIntr = charIDToTypeID("Intr");
-    desc78.putDouble(idIntr, 4096.000000);
+    desc27.putDouble(idIntr, 4096.000000);
     var idClrs = charIDToTypeID("Clrs");
-    var list11 = new ActionList();
-    var desc79 = new ActionDescriptor();
+    var list3 = new ActionList();
+    var desc28 = new ActionDescriptor();
     var idClr = charIDToTypeID("Clr ");
-    var desc80 = new ActionDescriptor();
+    var desc29 = new ActionDescriptor();
     var idRd = charIDToTypeID("Rd  ");
-    desc80.putDouble(idRd, 9.571985);
+    desc29.putDouble(idRd, 41.003892);
     var idGrn = charIDToTypeID("Grn ");
-    desc80.putDouble(idGrn, 0.000000);
+    desc29.putDouble(idGrn, 10.000000);
     var idBl = charIDToTypeID("Bl  ");
-    desc80.putDouble(idBl, 178.000005);
+    desc29.putDouble(idBl, 89.003893);
     var idRGBC = charIDToTypeID("RGBC");
-    desc79.putObject(idClr, idRGBC, desc80);
+    desc28.putObject(idClr, idRGBC, desc29);
     var idType = charIDToTypeID("Type");
     var idClry = charIDToTypeID("Clry");
     var idUsrS = charIDToTypeID("UsrS");
-    desc79.putEnumerated(idType, idClry, idUsrS);
+    desc28.putEnumerated(idType, idClry, idUsrS);
     var idLctn = charIDToTypeID("Lctn");
-    desc79.putInteger(idLctn, 0);
+    desc28.putInteger(idLctn, 0);
     var idMdpn = charIDToTypeID("Mdpn");
-    desc79.putInteger(idMdpn, 50);
+    desc28.putInteger(idMdpn, 50);
     var idClrt = charIDToTypeID("Clrt");
-    list11.putObject(idClrt, desc79);
-    var desc81 = new ActionDescriptor();
+    list3.putObject(idClrt, desc28);
+    var desc30 = new ActionDescriptor();
     var idClr = charIDToTypeID("Clr ");
-    var desc82 = new ActionDescriptor();
+    var desc31 = new ActionDescriptor();
     var idRd = charIDToTypeID("Rd  ");
-    desc82.putDouble(idRd, 255.000000);
+    desc31.putDouble(idRd, 0.000000);
     var idGrn = charIDToTypeID("Grn ");
-    desc82.putDouble(idGrn, 0.000000);
+    desc31.putDouble(idGrn, 255.000000);
     var idBl = charIDToTypeID("Bl  ");
-    desc82.putDouble(idBl, 0.023346);
+    desc31.putDouble(idBl, 95.992220);
     var idRGBC = charIDToTypeID("RGBC");
-    desc81.putObject(idClr, idRGBC, desc82);
+    desc30.putObject(idClr, idRGBC, desc31);
     var idType = charIDToTypeID("Type");
     var idClry = charIDToTypeID("Clry");
     var idUsrS = charIDToTypeID("UsrS");
-    desc81.putEnumerated(idType, idClry, idUsrS);
+    desc30.putEnumerated(idType, idClry, idUsrS);
     var idLctn = charIDToTypeID("Lctn");
-    desc81.putInteger(idLctn, 2048);
+    desc30.putInteger(idLctn, 4096);
     var idMdpn = charIDToTypeID("Mdpn");
-    desc81.putInteger(idMdpn, 50);
+    desc30.putInteger(idMdpn, 50);
     var idClrt = charIDToTypeID("Clrt");
-    list11.putObject(idClrt, desc81);
-    var desc83 = new ActionDescriptor();
-    var idClr = charIDToTypeID("Clr ");
-    var desc84 = new ActionDescriptor();
-    var idRd = charIDToTypeID("Rd  ");
-    desc84.putDouble(idRd, 255.000000);
-    var idGrn = charIDToTypeID("Grn ");
-    desc84.putDouble(idGrn, 252.000000);
-    var idBl = charIDToTypeID("Bl  ");
-    desc84.putDouble(idBl, 0.000000);
-    var idRGBC = charIDToTypeID("RGBC");
-    desc83.putObject(idClr, idRGBC, desc84);
-    var idType = charIDToTypeID("Type");
-    var idClry = charIDToTypeID("Clry");
-    var idUsrS = charIDToTypeID("UsrS");
-    desc83.putEnumerated(idType, idClry, idUsrS);
-    var idLctn = charIDToTypeID("Lctn");
-    desc83.putInteger(idLctn, 4096);
-    var idMdpn = charIDToTypeID("Mdpn");
-    desc83.putInteger(idMdpn, 50);
-    var idClrt = charIDToTypeID("Clrt");
-    list11.putObject(idClrt, desc83);
-    desc78.putList(idClrs, list11);
+    list3.putObject(idClrt, desc30);
+    desc27.putList(idClrs, list3);
     var idTrns = charIDToTypeID("Trns");
-    var list12 = new ActionList();
-    var desc85 = new ActionDescriptor();
+    var list4 = new ActionList();
+    var desc32 = new ActionDescriptor();
     var idOpct = charIDToTypeID("Opct");
     var idPrc = charIDToTypeID("#Prc");
-    desc85.putUnitDouble(idOpct, idPrc, 100.000000);
+    desc32.putUnitDouble(idOpct, idPrc, 100.000000);
     var idLctn = charIDToTypeID("Lctn");
-    desc85.putInteger(idLctn, 0);
+    desc32.putInteger(idLctn, 0);
     var idMdpn = charIDToTypeID("Mdpn");
-    desc85.putInteger(idMdpn, 50);
+    desc32.putInteger(idMdpn, 50);
     var idTrnS = charIDToTypeID("TrnS");
-    list12.putObject(idTrnS, desc85);
-    var desc86 = new ActionDescriptor();
+    list4.putObject(idTrnS, desc32);
+    var desc33 = new ActionDescriptor();
     var idOpct = charIDToTypeID("Opct");
     var idPrc = charIDToTypeID("#Prc");
-    desc86.putUnitDouble(idOpct, idPrc, 100.000000);
+    desc33.putUnitDouble(idOpct, idPrc, 100.000000);
     var idLctn = charIDToTypeID("Lctn");
-    desc86.putInteger(idLctn, 4096);
+    desc33.putInteger(idLctn, 4096);
     var idMdpn = charIDToTypeID("Mdpn");
-    desc86.putInteger(idMdpn, 50);
+    desc33.putInteger(idMdpn, 50);
     var idTrnS = charIDToTypeID("TrnS");
-    list12.putObject(idTrnS, desc86);
-    desc78.putList(idTrns, list12);
+    list4.putObject(idTrnS, desc33);
+    desc27.putList(idTrns, list4);
     var idGrdn = charIDToTypeID("Grdn");
-    desc77.putObject(idGrad, idGrdn, desc78);
+    desc26.putObject(idGrad, idGrdn, desc27);
     var idgradientLayer = stringIDToTypeID("gradientLayer");
-    desc76.putObject(idType, idgradientLayer, desc77);
+    desc25.putObject(idType, idgradientLayer, desc26);
     var idcontentLayer = stringIDToTypeID("contentLayer");
-    desc75.putObject(idUsng, idcontentLayer, desc76);
-    executeAction(idMk, desc75, DialogModes.NO);
+    desc24.putObject(idUsng, idcontentLayer, desc25);
+    executeAction(idMk, desc24, DialogModes.NO);
 };
 
 function RadialBlur(layerName) {
