@@ -1,9 +1,11 @@
 #include "TutorialMethod.jsx"
 
-var text = "色即是空\r空即是色";
-var windCount = 3;
-var blurPix = 8;
+var text = arguments[0];
+var windCount = arguments[1];
+var blurPix = arguments[2];
 
+text =�@text.replace("CR+LF", "\r")
+alert(text)
 var layerName = "origin";
 CreateProject();
 WriteText(text);
