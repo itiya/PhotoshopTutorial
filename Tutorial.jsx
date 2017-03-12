@@ -1,7 +1,9 @@
 #include "TutorialMethod.jsx"
 
+var text = "色即是空"
+
 CreateProject();
-WriteText();
+WriteText(text);
 TextAlign();
 TextRasterize();
 MakeChannel();
@@ -24,7 +26,7 @@ Rotate(-90);
 PolarCoordinateConversion("RctP");
 LayerModeScreen();
 AddGradationLayer();
-RadialBlur();
+RadialBlur(text);
 LoadChannelSelection();
 FillColor("Blck");
 SavePNG();

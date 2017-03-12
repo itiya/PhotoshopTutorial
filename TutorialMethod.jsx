@@ -32,7 +32,7 @@ function CreateProject() {
     executeAction(idMk, desc33, DialogModes.NO);
 };
 
-function WriteText() {
+function WriteText(text) {
     // =======================================================
     var idMk = charIDToTypeID("Mk  ");
     var desc38 = new ActionDescriptor();
@@ -44,7 +44,7 @@ function WriteText() {
     var idUsng = charIDToTypeID("Usng");
     var desc39 = new ActionDescriptor();
     var idTxt = charIDToTypeID("Txt ");
-    desc39.putString(idTxt, "Text");
+    desc39.putString(idTxt, text);
     var idwarp = stringIDToTypeID("warp");
     var desc40 = new ActionDescriptor();
     var idwarpStyle = stringIDToTypeID("warpStyle");
@@ -628,7 +628,7 @@ function AddGradationLayer() {
     executeAction(idMk, desc75, DialogModes.NO);
 };
 
-function RadialBlur() {
+function RadialBlur(layerName) {
     // =======================================================
     var idsetd = charIDToTypeID("setd");
     var desc87 = new ActionDescriptor();
@@ -655,7 +655,7 @@ function RadialBlur() {
     var idnull = charIDToTypeID("null");
     var ref37 = new ActionReference();
     var idLyr = charIDToTypeID("Lyr ");
-    ref37.putName(idLyr, "Text");
+    ref37.putName(idLyr, layerName);
     desc89.putReference(idnull, ref37);
     var idMkVs = charIDToTypeID("MkVs");
     desc89.putBoolean(idMkVs, false);
