@@ -32,6 +32,19 @@ function CreateProject() {
     executeAction(idMk, desc33, DialogModes.NO);
 };
 
+function SelectLayer(layerName) {
+    var idslct = charIDToTypeID("slct");
+    var desc54 = new ActionDescriptor();
+    var idnull = charIDToTypeID("null");
+    var ref7 = new ActionReference();
+    var idLyr = charIDToTypeID("Lyr ");
+    ref7.putName(idLyr, layerName);
+    desc54.putReference(idnull, ref7);
+    var idMkVs = charIDToTypeID("MkVs");
+    desc54.putBoolean(idMkVs, false);
+    executeAction(idslct, desc54, DialogModes.NO);
+};
+
 function WriteText(text) {
     var idMk = charIDToTypeID("Mk  ");
     var desc37 = new ActionDescriptor();
@@ -43,7 +56,7 @@ function WriteText(text) {
     var idUsng = charIDToTypeID("Usng");
     var desc38 = new ActionDescriptor();
     var idTxt = charIDToTypeID("Txt ");
-    desc38.putString(idTxt, text );
+    desc38.putString(idTxt, text);
     var idwarp = stringIDToTypeID("warp");
     var desc39 = new ActionDescriptor();
     var idwarpStyle = stringIDToTypeID("warpStyle");
@@ -217,6 +230,25 @@ function WriteText(text) {
     desc37.putObject(idUsng, idTxLr, desc38);
     executeAction(idMk, desc37, DialogModes.NO);
 };
+
+function EditLayerName(layerName) {
+    var idsetd = charIDToTypeID("setd");
+    var desc51 = new ActionDescriptor();
+    var idnull = charIDToTypeID("null");
+    var ref6 = new ActionReference();
+    var idLyr = charIDToTypeID("Lyr ");
+    var idOrdn = charIDToTypeID("Ordn");
+    var idTrgt = charIDToTypeID("Trgt");
+    ref6.putEnumerated(idLyr, idOrdn, idTrgt);
+    desc51.putReference(idnull, ref6);
+    var idT = charIDToTypeID("T   ");
+    var desc52 = new ActionDescriptor();
+    var idNm = charIDToTypeID("Nm  ");
+    desc52.putString(idNm, layerName );
+    var idLyr = charIDToTypeID("Lyr ");
+    desc51.putObject(idT, idLyr, desc52);
+    executeAction(idsetd, desc51, DialogModes.NO);
+}
 
 function TextAlign() {
     // =======================================================
